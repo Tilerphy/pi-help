@@ -33,8 +33,8 @@ function testPromises(){
                 console.log(e)
             });
 }
-
-function p0(val){ 
+ 
+function p0(val){  
     return 10;
 }
 testPromises();
