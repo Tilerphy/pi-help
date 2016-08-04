@@ -9,17 +9,23 @@ function testLet(){
 function testPromises(){
     "use strict"; 
     let pro = new Promise(function(resolve, reject){
-            if(1===1){
-                resolve("hey");
-            }else{
-                reject("suck");
-            }
+            var rand = parseInt(Math.random()*2000);
+            setTimeout(()=>{
+                 if(rand > 1000){
+               
+                        resolve(`rand num more than 1000, ${rand}`);
+                    }else{
+                        reject(`suck: ${rand}`);
+                    }
+                }, rand);
+            
         });
+        
     pro.then(function(a){
             console.log(a);
-                return p0(val);
+            return a;
         }, function(a){
-                
+                return a;
             })
         .then(function(b){
                 console.log(b);
@@ -33,6 +39,10 @@ function testPromises(){
                 console.log(e)
             });
 }
+ 
+ 
+ 
+ 
  
 function p0(val){  
     return 10;
