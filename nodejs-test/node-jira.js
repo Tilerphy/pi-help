@@ -1,5 +1,4 @@
 function jira_get(path){
-    "use strict";
     var https = require("https");
     var options ={
             hostname:"jira.avepoint.net",
@@ -11,8 +10,12 @@ function jira_get(path){
     
     var p = new Promise((resolve, reject)=>{
             var req = https.request(options, (res)=>{
+                var result = "";
                 res.on("data", (d)=>{
-                        resolve(d);
+                        result+=d.toString();
+                    });
+                res.on("end", ()=>{
+                        resolve(JSON.parse(result));
                     });
             });
             req.on("error",reject);
@@ -24,7 +27,6 @@ function jira_get(path){
 }
 
 function jira_post(path, data, contenttype="application/x-www-form-urlencoded"){
-    "use strict";
     var https = require("https");
     var querystring = require("querystring");
     var postData = querystring.stringify(data);
@@ -42,8 +44,12 @@ function jira_post(path, data, contenttype="application/x-www-form-urlencoded"){
     
     var p = new Promise((resolve, reject)=>{
             var req = https.request(options, (res)=>{
+                var result = "";
                 res.on("data", (d)=>{
-                        resolve(d);
+                        result+=d.toString();
+                    });
+                res.on("end", ()=>{
+                        resolve(JSON.parse(result));
                     });
             });
             req.on("error",reject);
