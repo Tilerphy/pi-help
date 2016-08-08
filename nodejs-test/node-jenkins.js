@@ -106,12 +106,6 @@ function jenkins_post(login_res, path, data){
         });
     return p;
 }
-
-jenkins_login().then((res)=>{
-        return jenkins_post(res, "/job/Component/job/AvePointServiceFramework/job/AvePointServiceFramework_1.0.0/build?delay=0sec", null);
-    }).then((d)=>{
-        //console.log(d);
-    })
-    .catch((e)=>{
-        console.log(e);
-    });
+module.exports.jenkins_login = jenkins_login;
+module.exports.jenkins_get = jenkins_get;
+module.exports.jenkins_post= jenkins_post;

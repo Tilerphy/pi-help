@@ -1,4 +1,5 @@
 var jira = require("./node-jira");
+var jenkins = require("./node-jenkins");
 jira.jira_get("/rest/api/2/myself")
     .then((d)=>{
             console.log(d.name);
@@ -15,3 +16,12 @@ jira.jira_get("/rest/api/2/myself")
     .catch((e)=>{
                 console.log(e);
         });
+    
+jenkins.jenkins_login().then((res)=>{
+        return jenkins_post(res, "/job/Component/job/AvePointServiceFramework/job/AvePointServiceFramework_1.0.0/build?delay=0sec", null);
+    }).then((d)=>{
+        //console.log(d);
+    })
+    .catch((e)=>{
+        console.log(e);
+    });
