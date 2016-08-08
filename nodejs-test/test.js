@@ -1,5 +1,4 @@
 var jira = require("./node-jira");
-var p = {};
 jira.jira_get("/rest/api/2/myself")
     .then((d)=>{
             console.log(d.name);
