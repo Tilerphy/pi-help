@@ -1,11 +1,11 @@
-function jenkins_login(){
-    var http = require("http");
+function jenkins_login(username, password, schema="http"){
+    var http = require(schema);
     var q = require("querystring");
     var postData = {
-            j_username:"zbsun",
-            j_password:"sunzongbao2007",
+            j_username:username,
+            j_password:password,
             from: "/",
-            json:'{"j_username":+"zbsun",+"j_password":+"sunzongbao2007",+"from":+"/"}' 
+            json:'{"j_username":+"'+username+'",+"j_password":+"'+password+'",+"from":+"/"}' 
         };
     var q_postData = q.stringify(postData);
     var options = {

@@ -17,8 +17,8 @@ jira.jira_get("/rest/api/2/myself")
                 console.log(e);
         });
     
-jenkins.jenkins_login().then((res)=>{
-        return jenkins_post(res, "/job/Component/job/AvePointServiceFramework/job/AvePointServiceFramework_1.0.0/build?delay=0sec", null);
+jenkins.jenkins_login("zbsun", "").then((res)=>{
+        return jenkins.jenkins_post(res, "/job/Component/job/AvePointServiceFramework/job/AvePointServiceFramework_1.0.0/build?delay=0sec", null);
     }).then((d)=>{
         //console.log(d);
     })
