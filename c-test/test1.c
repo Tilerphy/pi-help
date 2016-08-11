@@ -17,5 +17,6 @@ int main(){
     char str[] = "ab";
     printf("len with \\O: %d\n", sizeof(str));
     printf("len without \\O: %d\n", strlen(str));
+    printf("%d\n", EOF);
     return 0;
 }
