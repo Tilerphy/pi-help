@@ -7,11 +7,15 @@ int main(int argc, char** argvs){
 	pinMode(7, OUTPUT);
 	pinMode(2, OUTPUT);
         pinMode(3, OUTPUT);
+	pinMode(25, INPUT);
 	int a  = atoi(argvs[1]);
 	printf("%d\n", a);
 	int i = 5;
 	int count = 0 ;
 	while(count <= 64 * 8 *a){
+		while(digitalRead(25)){
+			delay(i);
+		}
 		
 //A
 		digitalWrite(7,  HIGH);
