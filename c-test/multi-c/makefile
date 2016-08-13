@@ -11,3 +11,6 @@ implhome.c \
 def.h
 	gcc -c implhome.c
 
+clean:
+	rm *.o
+	rm *.e
