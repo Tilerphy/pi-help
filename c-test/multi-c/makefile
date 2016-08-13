@@ -1,7 +1,6 @@
-main.e: \
-implhome.o \
-implname.o
-	gcc main.c -o main.e implhome.o implname.o
+mainOS= implhome.o implname.o
+main.e: $(mainOS)
+	gcc main.c -o main.e $(mainOS)
 implname.o: \
 implname.c \
 def.h
