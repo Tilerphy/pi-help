@@ -7,7 +7,10 @@ int main(){
     long int _li = 10;
     long long _ll = 10;
     char _char = 'a';
-    char* _char_p = "hahahaha";
+    char* _char_p = "12345";
+    char _char_a[] = "123456";
+    //overflow
+    char _char_a_b[6] = "123456"; // 7
     int _int_p[10] = {1,2,3,4,5,6,7,8,9,0};
     unsigned long _ul = 100;
     unsigned int _ui = 100;
@@ -20,6 +23,8 @@ int main(){
     printf("long long %d\n" , sizeof(_ll));
     printf("char %d\n" , sizeof(_char));
     printf("char* %d\n" , sizeof(_char_p));
+    printf("char[*] %d\n" , sizeof(_char_a));
+    printf("char[6] %d\n" , sizeof(_char_a_b));
     printf("int[] %d\n" , sizeof(_int_p));
     printf("first point of int[] %d\n" , sizeof(_int_p[0]));
    
