@@ -11,7 +11,7 @@ int main(){
     char _char_a[] = "123456";
     //overflow
     char _char_a_b[7] = "123456"; // 7
-    int _int_p[10] = {1,2,3,4,5,6,7,8,9,0};
+    int _int_p[10] = {1,2,3,4,5,6,7,8,9,0};// 4* 10 
     unsigned long _ul = 100;
     unsigned int _ui = 100;
     int* malloc_int_p = (int*) malloc(100);
