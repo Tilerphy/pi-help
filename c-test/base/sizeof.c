@@ -17,12 +17,24 @@ int main(){
     int* malloc_int_p = (int*) malloc(100);
     //auto alignment 内存对齐
     struct pet_define {
-            int name;
-            char type[5];
-            int age;
-        } Pet;
-    struct pet_define cat;
+            char* name; //8
+            char type[5]; //5
+            int age; // 4
+            union inner{
+                    int sex; //4
+                    char attr;// 1
+                } others; //memory alignment to 8
+            char tt; //1
+        } pet;
+    pet.name = "cat";
     
+    //memory alignment
+    union _u{
+            int age; //4 
+            char* name; //8
+            char type[9]; //9 
+        };
+    union _u UU;
     printf("int %d\n" , sizeof(10));
     printf("int %d\n" , sizeof(_int));
     printf("short %d\n" , sizeof(_short));
@@ -40,8 +52,13 @@ int main(){
     printf("unsigned long %d\n" , sizeof(_ul));
     printf("unsigned int %d\n" , sizeof(_ui));
     printf("malloc() for int pointers %d\n", sizeof(malloc_int_p));
-    printf("struct: %d\n", sizeof(Pet));
-    printf("struct: %d. name is start at %p, age is start at %p", sizeof(cat), &cat.name, &cat.age);
+    printf("struct: %d\n", sizeof(pet));
+    printf("struct: %d. name is start at %p, age is start at %p\n", sizeof(pet), &pet.name, &pet.age);
+    printf("struct union: pet.others.attr is start at %p, pet.others.sex is start at %p\n",
+           &pet.others.attr, &pet.others.sex);
+    
+    printf("union: %d\n", sizeof(UU));
+    printf("Union: %d. name is start at %p, age is start at %p", sizeof(UU), &UU.name, &UU.age);
     
     return 0;
 }
