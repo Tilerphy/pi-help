@@ -7,11 +7,11 @@ int main(int argc, char** argv){
    
     char* str = "ppp01234567";
     char** strs;
-    *(strs) = "123456";
-    *(strs+1) = "234567";
+    // *(strs) = "123456";
+    // *(strs+1) = "234567";
     
-    printf("%s %s\n", strs[0], strs[1]);
-    printf("%p %p\n", strs, *strs);
+   // printf("%s %s\n", strs[0], strs[1]);
+   // printf("%p %p\n", strs, *strs);
     /*
         char* str =  "1   2   3  4  5  6  7";
                      str
@@ -26,7 +26,7 @@ int main(int argc, char** argv){
     printf("&str[0] %p\n", &str[0]);
     printf("%32x, size: %d\n", a, sizeof(a));
     
-    int* ints = (int*)malloc(6);
+    int* ints = (int*)malloc(24);
     *(ints) = 1;
     *(ints+1) = 2;
     ints[2] = 3;
