@@ -27,7 +27,7 @@ int main(){
                     char attr;// 1
                 } others; //memory alignment to 8
             char tt; //1
-        } pet;
+        } pet, *op;
     pet.name = "cat";
     
     //memory alignment
@@ -57,6 +57,7 @@ int main(){
     printf("unsigned int %d\n" , sizeof(_ui));
     printf("malloc() for int pointers %d\n", sizeof(malloc_int_p));
     printf("struct: %d\n", sizeof(pet));
+    printf("struct *: %d\n", sizeof(op));
     printf("struct: %d. name is start at %p, age is start at %p\n", sizeof(pet), &pet.name, &pet.age);
     printf("struct union: pet.others.attr is start at %p, pet.others.sex is start at %p\n",
            &pet.others.attr, &pet.others.sex);
