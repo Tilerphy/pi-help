@@ -6,6 +6,8 @@ int main(){
     long _long = 10L;
     long int _li = 10;
     long long _ll = 10;
+    float f = 9.8;
+    double d = 10.4;
     char _char = 'a';
     char* _char_p = "12345";
     char _char_a[] = "123456";
@@ -37,6 +39,8 @@ int main(){
     union _u UU;
     printf("int %d\n" , sizeof(10));
     printf("int %d\n" , sizeof(_int));
+    printf("float %d\n" , sizeof(f));
+    printf("double %d\n" , sizeof(d));
     printf("short %d\n" , sizeof(_short));
     printf("long %d\n", sizeof(_long));
     printf("long int %d\n", sizeof(_li));

@@ -40,5 +40,7 @@ int main(int argc, char** argv){
     printf("&ints[0] %p\n", &ints[0]);
     printf("&ints[0] %d\n", *(&ints[0]+2));
     free(ints);
+    
+    printf("-3<-2<1 %d\n", -3<-2==1);
     return 0;
 }
