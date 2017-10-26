@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <wiringPi.h>
+#define DIN 0
+#define CS 2
+#define CLK 3
+
+int main(){
+	wiringPiSetup();
+	pinMode(DIN, OUTPUT);
+	pinMode(CS, OUTPUT);
+	pinMode(CLK, OUTPUT);
+	
+	digitalWrite(CS, LOW);
+	
+	while(1){
+		
+		int mask = 0x80;
+		for(mask=0x80; mask > 0 ; mask >>= 1){
+			digitalWrite（
+			）if(mask == 0x10){
+				digitalWrite(DIN, HIGH);
+			}else{
+				digitalWrite(DIN, LOW);
+			}
+		}
+		
+	}
+	return 0;
+}
